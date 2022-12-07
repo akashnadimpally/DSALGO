@@ -1,0 +1,18 @@
+def Isomorphic(s,t):
+    def helper(word):
+        output = []
+        lookup = {}
+        i = 1
+        for w in word:
+            if w not in lookup:
+                lookup[w] = i
+                i+=1
+            output.append(lookup[w])
+        return output
+    return helper(s) == helper(t)
+
+
+
+s = "title"
+t = "toile"
+print(Isomorphic(s,t))

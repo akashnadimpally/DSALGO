@@ -5,3 +5,4 @@ turtle
 urllib3
 times
 requests
+trino
