@@ -1,16 +1,18 @@
-# This is a sample Python script.
+import string
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+alpha = list(string.ascii_lowercase)
+v = ['a','e','i','o','u']
+#
+# print((alpha))
+#
+# for i in alpha:
+#     if i in v:
+#         alpha.remove(i)
+#
+# print((alpha))
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+word = [1,2,3,4,5]
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(word[])
+print(word[1:5])
