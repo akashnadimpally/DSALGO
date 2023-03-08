@@ -6,3 +6,5 @@ urllib3
 times
 requests
 trino
+openai
+numpy
