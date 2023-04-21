@@ -35,23 +35,55 @@ class SLL:
     def printSLL(self):
         temp = self.head
         while (temp.ref is not None):
-            print(temp.val, end=" ")
+            print(temp.val, end=" -> ")
             temp = temp.ref
+        print("\n")
+            # if (temp.ref is None):
+            #     print(" ", end="\n")
 
     def deleteSLL(self, pos):
-        pass
+        if self.head is None:
+            return "no values to delete"
+        else:
+            if pos == 0:
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head.ref = self.head
+            elif pos == -1:
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                else:
+                    temp = self.head
+                    while temp is not None:
+                        if temp.ref == self.tail:
+                            break
+                        temp = temp.ref
+                    temp.ref = None
+                    self.tail = temp
+            else:
+                k = 0
+                temp = self.head
+                while (k< (pos - 1)):
+                    temp = temp.ref
+                    k+=1
+                nextNode = temp.ref
+                temp.ref = nextNode.ref
+
 
     def searchSLL(self, sval):
-        i = 0
+        j = 0
         if self.head is None:
             return "No values"
         else:
             temp = self.head
             while temp is not None:
                 if temp.val == sval:
-                    return i
+                    return "Found at "+str(j)
                 temp = temp.ref
-                i+=1
+                j+=1
             return "Not Found"
 
 
@@ -73,7 +105,14 @@ sll.insertSLL(6, -1)
 sll.insertSLL(7, 2)
 sll.insertSLL(8, 4)
 sll.insertSLL(9, 6)
-# sll.printSLL()  # Output: 3 2 7 1 8 4 9 5 6
+
+sll.printSLL()  # Output: 3 2 7 1 8 4 9 5 6
 
 print(sll.searchSLL(9))
 
+
+
+sll.deleteSLL(2)
+
+print("After deleting")
+sll.printSLL()
