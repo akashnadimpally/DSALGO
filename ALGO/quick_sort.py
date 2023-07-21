@@ -1,5 +1,3 @@
-
-
 def quick_sort(l):
     n = len(l)
     if n <= 1:
